@@ -1,0 +1,44 @@
+.container {
+  border: 1px dashed #A45DFF;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif, Roboto, Arial;
+  font-size: 0.7em;
+  font-weight: 700;
+  padding: 1em 1em 3em;
+}
+
+label {
+  margin-bottom: 0.3em;
+}
+
+input {
+  font-family: sans-serif, Roboto, Arial;
+  height: 20px;
+  padding-left: 0.5em;
+  border: 1px solid var(--betterplace-color-gray-300);
+  border-radius: 3px;
+}
+
+input:hover {
+  box-shadow: 0 1px 0 var(--betterplace-color-gray-300);
+}
+
+input:focus {
+  border: 1px solid var(--betterplace-color-green-800);
+}
+
+input.error {
+  border-color: var(--betterplace-color-red-500);
+}
+
+input.error:hover {
+  box-shadow: 0 1px 0 var(--betterplace-color-red-500);
+}
+
+input.error:focus {
+  border-color: var(--betterplace-color-red-800);
+}

@@ -12,8 +12,25 @@ export default {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
-} satisfies Meta<typeof MoneyInput>
+  argTypes: {
+    locale: {
+      control: {
+        type: 'select',
+        options: ['en-US', 'de-DE'],
+      },
+    },
+  },
+} as Meta<MoneyInputStoryArgs>;
 
+type MoneyInputStoryArgs = {
+  locale: string;
+}
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default = {}
+export const Default = (args: MoneyInputStoryArgs) => <MoneyInput {...args} />;
+Default.args = {
+  locale: 'de-DE',
+};
+
+export const US = () => (
+  <MoneyInput locale='en-US' />
+);

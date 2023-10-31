@@ -22,7 +22,7 @@ export default function MoneyInput({ locale, isDisabled, error }: MoneyInputProp
     console.log(cents)
   }
 
-  const formattedValue = isNaN(valueAsNumber) ? '' : new Intl.NumberFormat(locale, {
+  const formattedCurrency = isNaN(valueAsNumber) ? '' : new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: locale === 'us' ? 'USD' : 'EUR',
     minimumFractionDigits: 2,
@@ -45,7 +45,7 @@ export default function MoneyInput({ locale, isDisabled, error }: MoneyInputProp
             disabled={isDisabled}
             className={error ? _styles.error : ''}
           />
-          <span>{formattedValue}</span>
+          <span>{formattedCurrency}</span>
       </form>
     </div>
   )

@@ -29,7 +29,6 @@ export default function MoneyInput({ locale, isDisabled, error }: MoneyInputProp
     maximumFractionDigits: 2,
   }).format(valueAsNumber);
 
-
   return (
     <div className={_styles.container}>
       <form>

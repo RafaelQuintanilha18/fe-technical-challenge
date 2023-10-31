@@ -36,8 +36,6 @@ export default function MoneyInput({ locale, isDisabled, error }: MoneyInputProp
         <label htmlFor="value">Label*</label>
           <input
             type="text"
-            // step={0.01}
-            // min={0}
             onChange={handleChange}
             onBlur={handleBlur}
             value={value}
@@ -50,77 +48,3 @@ export default function MoneyInput({ locale, isDisabled, error }: MoneyInputProp
     </div>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import { useState, useEffect } from 'react';
-import _styles from './MoneyInput.module.css'
-
-interface MoneyInputProps {
-  locale: string;
-}
-
-export default function MoneyInput({ locale }: MoneyInputProps) {
-  const [value, setValue] = useState<string>("0")
-  const [formattedValue, setFormattedValue] = useState<string>()
-  const parsedValue = parseFloat(value);
-
-  useEffect(() => {
-
-    if (isNaN(parsedValue)) {
-      setFormattedValue('0');
-    } else {
-      const formatted = new Intl.NumberFormat(locale, {
-        style: 'currency',
-        currency: locale === 'us' ? 'USD' : 'EUR',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }).format(parsedValue);
-
-      setFormattedValue(formatted);
-    }
-  }, [value])
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value
-    setValue(newValue)
-  }
-
-  const handleBlur = () => {
-    const cents = Math.round(parsedValue * 100)
-    console.log(cents)
-  }
-
-
-  return (
-    <div className={_styles.container}>
-      <form>
-        <label htmlFor="value">Label*</label>
-          <input
-            type="number"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={value}
-            required
-          />
-          <span>Result: {formattedValue}</span>
-      </form>
-    </div>
-  )
-}
- */

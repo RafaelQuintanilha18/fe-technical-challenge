@@ -23,12 +23,21 @@ input {
   border-radius: 3px;
 }
 
-input:hover {
+input:not(:disabled):hover {
   box-shadow: 0 1px 0 var(--betterplace-color-gray-300);
 }
 
 input:focus {
   border: 1px solid var(--betterplace-color-green-800);
+}
+
+input:disabled {
+  border: 1px solid var(--betterplace-color-gray-300);
+  cursor: not-allowed;
+}
+
+span {
+  margin-top: 0.5em;
 }
 
 input.error {
@@ -41,4 +50,5 @@ input.error:hover {
 
 input.error:focus {
   border-color: var(--betterplace-color-red-800);
+  box-shadow: 0px 0px 0 1px var(--betterplace-color-green-800);
 }

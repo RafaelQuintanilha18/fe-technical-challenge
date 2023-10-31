@@ -14,23 +14,29 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     locale: {
-      control: {
-        type: 'select',
-        options: ['en-US', 'de-DE'],
-      },
+        options: ['us', 'de'],
+        control: { type: 'radio' },
     },
-  },
+    isDisabled: {
+      options: [true, false],
+      control: { type: 'boolean' },
+    },
+    error: {
+      options: [true, false],
+      control: { type: 'boolean' },
+    }
+ },
 } as Meta<MoneyInputStoryArgs>;
 
 type MoneyInputStoryArgs = {
   locale: string;
+  disabled?: boolean;
+  error?: boolean;
 }
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = (args: MoneyInputStoryArgs) => <MoneyInput {...args} />;
 Default.args = {
-  locale: 'de-DE',
+  locale: 'de',
+  isDisabled: false,
+  error: false,
 };
-
-export const US = () => (
-  <MoneyInput locale='en-US' />
-);
